@@ -1,5 +1,4 @@
 <?php
-// bootstrap.php
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 
@@ -18,10 +17,10 @@ $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/class"), 
     'path' => __DIR__ . '/db.sqlite',
 );*/
 $conn = array(
-    'dbname' => 'doctrine_test',
+    'dbname' => 'blog_doctrine',
     'user' => 'root',
     'password' => 'root',
-    'host' => 'localhost',
+    'host' => '127.0.0.1:8889',
     'driver' => 'pdo_mysql',
 );
 

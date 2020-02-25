@@ -39,7 +39,7 @@ final class Versions
   'symfony/polyfill-mbstring' => 'v1.14.0@34094cfa9abe1f0f14f48f490772db7a775559f2',
   'symfony/polyfill-php73' => 'v1.14.0@5e66a0fa1070bf46bec4bea7962d285108edd675',
   'symfony/service-contracts' => 'v2.0.1@144c5e51266b281231e947b51223ba14acf1a749',
-  '__root__' => 'dev-master@dfd3b0cf07ec94db21e9ec958d1dd7888f4363de',
+  '__root__' => 'dev-master@10efe8d38f8a7b4660a784c9af46381c1fb87f53',
 );
 
     private function __construct()
