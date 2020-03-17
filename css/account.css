@@ -1,0 +1,55 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.accountBox {
+    width: 500px;
+    margin: 15px;
+    padding: 40px 30px 25px 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: solid #ccc 1px;
+    
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+.accountInfo{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.accountInfo img{
+    width: 140px;
+    height: 140px;
+    margin: 0 25px 0 0;
+    border-radius: 100%;
+    object-fit: cover;
+    border: solid #ccc 1px;
+}
+
+.accountInfo div{
+    width: auto;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 10px 0;
+    word-break: break-all;
+}
+
+span {
+    color: #666;
+}

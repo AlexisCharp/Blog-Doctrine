@@ -25,5 +25,8 @@ $conn = array(
 );
 
 // obtaining the entity manager
+require 'class/Message.php';
+require 'class/Utilisateur.php';
 $entityManager = EntityManager::create($conn, $config);
+
 ?>

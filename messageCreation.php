@@ -14,8 +14,18 @@
 </html>
 
 <?php
-require "cli-config.php";
-$message = "Bonjour c'est mon message";
+require 'bootstrap.php';
+//Regarder le problème de chemin qui oblige la déclaration des classes dans le bootstrap (autoload non-fonctionnel)
+//Sûrement un souci lors de l'installation de Doctrine snif
+$message = new Message();
+$rep = $entityManager->getRepository('Utilisateur');
+$user = $rep->find(1);
+
+$text = "Bonjour c'est mon premier message";
+$message->setText($text);
+$message->setUtilisateur($user);
+
 $entityManager->persist($message);
 $entityManager->flush();
+echo ($message->getId());
 ?>
