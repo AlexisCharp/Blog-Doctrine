@@ -15,5 +15,27 @@ session_start();
 </head>
 <body>
     <?php require 'navbar.php'; ?>
+    <div class="containerGlobal">
+        <div class="title">
+            <h1>Bienvenue sur Bloggy !</h1>
+        </div>
+        <div class="container">
+            <div class="lastArticles">
+                <h2>Les derniers articles</h2>
+                <div class="articlesSection">
+                    <?php
+                    $articlesRepository = $entityManager->getRepository('Article');
+                    $articles = $articlesRepository->findAll();
+                    for($i=0;$i<4;$i++){
+                        echo("<a class='article' href='./article.php?id={$articles[$i]->getId()}'><p>{$articles[$i]->getTitle()}</p></a>");
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="blogMenu">
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>

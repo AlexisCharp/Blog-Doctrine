@@ -1,0 +1,91 @@
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.containerGlobal {
+    margin: auto;
+    margin-top: 50px;
+}
+
+.title {
+    height: 100px;
+    background: linear-gradient(-45deg, #4623a8, #288faf);
+    background-size: 400% 400%;
+    animation: gradient ease infinite 10s;
+    animation-direction: alternate;
+    position: relative;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    font-weight: 800;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    width: 100%;
+    flex-grow: 100;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.container{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.lastArticles{
+    padding: 10px;
+    width: 100%;
+}
+
+.articlesSection{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.article{
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    margin: 8px 0;
+    width: 45%;
+    border: solid #666 1px;
+    border-radius: 6px;
+    background-color: #ccc;
+    transition: all ease 0.4s;
+}
+
+.article:hover{
+    transform: scale(1.05);
+    filter: contrast(70%);
+}
+
+.blogMenu{
+    padding: 10px;
+    width: 400px;
+    background-color: turquoise;
+}

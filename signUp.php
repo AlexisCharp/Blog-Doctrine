@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,7 +13,7 @@
     <?php require 'navbar.php' ?>
     <div class="container">
         <div>
-            <form class='connectBox' method="POST" action="signUp.php">
+            <form class='connectBox' method="POST" action="treatSignUp.php">
                 <h1>Sign Up</h1>
                 <label for="email">Email :</label>
                 <input type="email" id="email" name="email" required>

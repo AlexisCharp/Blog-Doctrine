@@ -6,7 +6,7 @@ class Utilisateur{
     /** @Id @Column(type="integer") @GeneratedValue **/
     private $id;
     /** @Column(type="string") **/
-    private $login;
+    private $username;
     /** @Column(type="string") **/
     private $passwd;
     /** @Column(type="string") **/
@@ -15,33 +15,35 @@ class Utilisateur{
     private $firstname;
     /** @Column(type="string") **/
     private $lastname;
+    /** @Column(type="integer") **/
+    private $status;
 
     public function getId(){
         return $this->id;
     }
 
     /**
-     * Set login.
+     * Set username.
      *
-     * @param string $login
+     * @param string $username
      *
      * @return Utilisateur
      */
-    public function setLogin($login)
+    public function setUsername($username)
     {
-        $this->login = $login;
+        $this->username = $username;
 
         return $this;
     }
 
     /**
-     * Get login.
+     * Get username.
      *
      * @return string
      */
-    public function getLogin()
+    public function getUsername()
     {
-        return $this->login;
+        return $this->username;
     }
 
     /**
@@ -138,5 +140,29 @@ class Utilisateur{
     public function getLastname()
     {
         return $this->lastname;
+    }
+
+    /**
+     * Set status.
+     *
+     * @param int $status
+     *
+     * @return Utilisateur
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status.
+     *
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 }

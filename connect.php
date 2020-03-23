@@ -5,11 +5,11 @@ session_start();
 
 if(isset($_SESSION["user"])){
     header('Location: index.php');
-} else if(isset($_POST["login"]) && isset($_POST["passwd"])) {
+} else if(isset($_POST["email"]) && isset($_POST["passwd"])) {
     // $query = "SELECT * FROM utilisateurs WHERE login='{$_POST["login"]}'";
     // $stmt = $db->query($query);
     $repositoryUser = $entityManager->getRepository('Utilisateur');
-    $user = $repositoryUser->findBy(array('login' => $_POST["login"]));
+    $user = $repositoryUser->findBy(array('email' => $_POST["email"]));
     $user = $user[0];
         if(empty($user)){
             header('Location: connect.php?error=login');
@@ -39,9 +39,9 @@ if(isset($_SESSION["user"])){
             <a class="backHome" href="index.php">< Get back to homepage</a>
             <form class='connectBox' method="POST" action="connect.php">
                 <h1>Sign in</h1>
-                <label for="login">Login :</label>
-                <input type="text" id="login" name="login" required>
-                <label for="password">Password :</label>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+                <label for="password">Password:</label>
                 <input type="password" id="password" name="passwd" required>
                 <input type="submit" value="Connection">
             </form>

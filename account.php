@@ -27,7 +27,7 @@ if(!isset($_SESSION["user"])){
                 <img src="img/picture.jpg" alt="">
                 <div>
                     <?php
-                    echo("<p>Username:<br><span>". $_SESSION["user"]->getLogin() ."</span></p>");
+                    echo("<p>Username:<br><span>". $_SESSION["user"]->getUsername() ."</span></p>");
                     echo("<p>Email:<br><span>". $_SESSION["user"]->getEmail() ."</span></p>");
                     echo("<p>Firstname:<br><span>". $_SESSION["user"]->getFirstname() ."</span></p>");
                     echo("<p>Lastname:<br><span>". $_SESSION["user"]->getLastname() ."</span></p>");
