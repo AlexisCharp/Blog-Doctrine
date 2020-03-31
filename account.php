@@ -2,7 +2,7 @@
 
 require 'bootstrap.php';
 session_start();
-if(!isset($_SESSION["user"])){
+if(!isset($_SESSION["usr"])){
     header('Location: connect.php');
 }
 
@@ -27,10 +27,10 @@ if(!isset($_SESSION["user"])){
                 <img src="img/picture.jpg" alt="">
                 <div>
                     <?php
-                    echo("<p>Username:<br><span>". $_SESSION["user"]->getUsername() ."</span></p>");
-                    echo("<p>Email:<br><span>". $_SESSION["user"]->getEmail() ."</span></p>");
-                    echo("<p>Firstname:<br><span>". $_SESSION["user"]->getFirstname() ."</span></p>");
-                    echo("<p>Lastname:<br><span>". $_SESSION["user"]->getLastname() ."</span></p>");
+                    echo("<p>Username:<br><span>". $_SESSION["usr"]->getUsername() ."</span></p>");
+                    echo("<p>Email:<br><span>". $_SESSION["usr"]->getEmail() ."</span></p>");
+                    echo("<p>Firstname:<br><span>". $_SESSION["usr"]->getFirstname() ."</span></p>");
+                    echo("<p>Lastname:<br><span>". $_SESSION["usr"]->getLastname() ."</span></p>");
                     ?>
                 </div>
             </div>

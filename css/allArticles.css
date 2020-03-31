@@ -1,0 +1,23 @@
+.container{
+    margin: auto;
+    margin-top: 70px;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 500px;
+}
+
+.link{
+    border: solid #666 1px;
+    border-radius: 10px;
+    background-color: #ccc;
+    display: block;
+    padding: 10px;
+    margin-bottom: 30px;
+    color: #000;
+    text-decoration: none;
+    transition: all ease 0.4s;
+}
+
+.link:hover{
+    transform: scale(1.05);
+    filter: drop-shadow(20px 10px 4px #ccc);
+}

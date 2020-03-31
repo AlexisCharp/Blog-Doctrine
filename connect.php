@@ -3,22 +3,30 @@ require('bootstrap.php');
 // echo(password_hash('toto', PASSWORD_DEFAULT));
 session_start();
 
-if(isset($_SESSION["user"])){
+if(isset($_GET['from'])){
+    $_SESSION['from'] = $_GET['from'];
+}
+
+if(isset($_SESSION["usr"])){
     header('Location: index.php');
 } else if(isset($_POST["email"]) && isset($_POST["passwd"])) {
-    // $query = "SELECT * FROM utilisateurs WHERE login='{$_POST["login"]}'";
-    // $stmt = $db->query($query);
     $repositoryUser = $entityManager->getRepository('Utilisateur');
     $user = $repositoryUser->findBy(array('email' => $_POST["email"]));
     $user = $user[0];
+    print_r($user);
         if(empty($user)){
             header('Location: connect.php?error=login');
         } else {
             if(!password_verify($_POST['passwd'], $user->getPasswd())){
                 header('Location: connect.php?error=mdp');
             } else {
-                $_SESSION["user"] = $user;
-                header('Location: index.php');
+                $_SESSION["usr"] = $user;
+                if(isset($_SESSION['from'])) {
+                    header('Location: article.php?id='. $_SESSION['from']);
+                }
+                else {
+                    header('Location: index.php');
+                }
             }
         }
 }

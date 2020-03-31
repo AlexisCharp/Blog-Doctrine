@@ -2,7 +2,7 @@
 require 'bootstrap.php';
 session_start();
 
-if(!isset($_SESSION["user"])){
+if(!isset($_SESSION["usr"])){
     $repositoryUser = $entityManager->getRepository('Utilisateur');
     $existingEmail = $repositoryUser->findBy(array('email' => $_POST["email"]));
     $existingUsername = $repositoryUser->findBy(array('username' => $_POST["username"]));

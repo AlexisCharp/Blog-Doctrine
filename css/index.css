@@ -57,6 +57,7 @@ p{
 .lastArticles{
     padding: 10px;
     width: 100%;
+    position: relative;
 }
 
 .articlesSection{
@@ -87,5 +88,21 @@ p{
 .blogMenu{
     padding: 10px;
     width: 400px;
-    background-color: turquoise;
+    /* background-color: turquoise; */
+}
+
+.linkAll{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    margin: 5px 0;
+    padding: 5px 0;
+    color: #aaa;
+    transition: all ease 0.3s;
+    position: absolute;
+    bottom: -15px;
+    right: 10px;
+}
+
+.linkAll:hover{
+    color: #000;
 }

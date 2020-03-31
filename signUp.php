@@ -10,7 +10,15 @@
     <link rel="stylesheet" href="css/signUp.css">
 </head>
 <body>
-    <?php require 'navbar.php' ?>
+    <?php
+    session_start();
+    unset($_SESSION["from"]);
+    if(isset($_SESSION["usr"])){
+        header('Location: index.php');
+    }
+    require 'navbar.php';
+    
+    ?>
     <div class="container">
         <div>
             <form class='connectBox' method="POST" action="treatSignUp.php">

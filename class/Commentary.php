@@ -1,37 +1,31 @@
 <?php
 
-/** @Entity @Table(name="messages") **/
+/** @Entity @Table(name="commentaries") **/
 
-class Message {
+class Commentary {
     /** @Id @Column(type="integer") @GeneratedValue **/
     private $id;
     /** @Column(type="string") **/
     private $text;
-    /** @Column(type="date", nullable=true) **/
+    /** @Column(type="datetime") **/
     private $datepost;
     /**
      * @ManyToOne (targetEntity="Utilisateur")
      * @JoinColumn (nullable=false)
     **/
     private $utilisateur;
-
     /**
-     * Get id.
-     *
-     * @return int
-     */
+     * @ManyToOne (targetEntity="Article")
+     * @JoinColumn (nullable=false)
+    **/
+    private $article;
+
+
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * Set text.
-     *
-     * @param string $text
-     *
-     * @return Message
-     */
     public function setText($text)
     {
         $this->text = $text;
@@ -39,11 +33,6 @@ class Message {
         return $this;
     }
 
-    /**
-     * Get text.
-     *
-     * @return string
-     */
     public function getText()
     {
         return $this->text;
@@ -54,9 +43,20 @@ class Message {
         return $this->utilisateur;
     }
 
-    public function setUtilisateur($user)
+    public function setUtilisateur($usr)
     {
-        $this->utilisateur = $user;
+        $this->utilisateur = $usr;
+        return $this;
+    }
+
+    public function getArticle()
+    {
+        return $this->article;
+    }
+
+    public function setArticle($article)
+    {
+        $this->article = $article;
         return $this;
     }
 

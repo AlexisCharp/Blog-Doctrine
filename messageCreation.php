@@ -17,7 +17,7 @@
 require 'bootstrap.php';
 //Regarder le problème de chemin qui oblige la déclaration des classes dans le bootstrap (autoload non-fonctionnel)
 //Sûrement un souci lors de l'installation de Doctrine snif
-$message = new Message();
+$message = new Commentary();
 $rep = $entityManager->getRepository('Utilisateur');
 $user = $rep->find(1);
 

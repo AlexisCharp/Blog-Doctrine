@@ -9,7 +9,7 @@ class Article{
     private $title;
     /** @Column(type="text") **/
     private $text;
-    /** @Column(type="date") **/
+    /** @Column(type="datetime") **/
     private $datepost;
     /**
      * @ManyToOne (targetEntity="Utilisateur")
