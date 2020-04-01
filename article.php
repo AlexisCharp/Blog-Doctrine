@@ -30,11 +30,13 @@ if(isset($_GET['id'])){
     <div class="container">
         <div class="containerArticle">
             <h1><?php echo($article->getTitle()); ?></h1>
+            <h2><?php echo($article->getUtilisateur()->getUsername() . ' - ' . $article->getDatepost()->format('d/m/Y à H:i')); ?></h2>
             <p><?php echo($article->getText()); ?></p>
         </div>
-        <div class="commentariesContainer">
+        <button class="toggleClass">Afficher/Masquer les commentaires</button>
+        <div class="commentariesContainer invisible">
             <?php
-                $commentaries = $entityManager->getRepository('Commentary')->findBy(array('article'=>$article));
+                $commentaries = $entityManager->getRepository('Commentary')->findBy(array('article'=>$article), array('datepost'=>'DESC'));
                 $users = $entityManager->getRepository('Utilisateur');
                 foreach($commentaries as $row){
                     echo('<div class="commentaries"><p class="username">'. $row->getUtilisateur()->getUsername() . ' - ' . $row->getDatepost()->format('d/m/Y à H:i') .'</p><p class="commentary">'. $row->getText() .'</p></div>');
@@ -51,5 +53,18 @@ if(isset($_GET['id'])){
         </div>
        
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.toggleClass').on('click', function(e){
+                var offset = $(this).offset();
+                $('.commentariesContainer').toggleClass('invisible');
+                window.scrollTo({
+                    top: offset.top,
+                    behavior: 'smooth'
+                })
+            })
+        })
+    </script>
 </body>
 </html>

@@ -17,6 +17,11 @@ h1{
     font-family: 'Montserrat', sans-serif;
 }
 
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+}
+
 p{
     margin: 20px 0;
     font-family: 'Montserrat', sans-serif;
@@ -89,4 +94,31 @@ hr{
 
 .signInNeeded{
     margin-bottom: 30px;
+}
+
+.invisible{
+    display: none;
+}
+
+button{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 5px 4px 5px;
+    width: 300px;
+
+    border: solid #ccc 1px;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #666;
+    
+    transition: all ease 0.4s;
+}
+
+button:hover{
+    background-color: #666;
+    color: #fff;
+    cursor: pointer;
 }
