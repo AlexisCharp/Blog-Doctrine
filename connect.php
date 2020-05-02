@@ -1,6 +1,6 @@
 <?php
 require('bootstrap.php');
-// echo(password_hash('toto', PASSWORD_DEFAULT));
+//echo(password_hash('toto', PASSWORD_DEFAULT));
 session_start();
 
 if(isset($_GET['from'])){
